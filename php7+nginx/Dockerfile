@@ -50,7 +50,7 @@ RUN mv /etc/nginx/sites-available/default /etc/nginx/sites-available/default.bac
 COPY ./default /etc/nginx/sites-enabled/default
 
 RUN service php7.0-fpm restart
-VOLUME ["/var/log/nginx","/var/log"]
+VOLUME ["/var/log"]
 CMD /bin/bash -c "service php7.0-fpm start; nginx -g 'daemon off;'"
 EXPOSE 80 443 9000
 
